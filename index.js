@@ -46,10 +46,10 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  let arrayCopy = [...array]
+  return arrayCopy
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,8 +63,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(arrayCopy){
+  if (arrayCopy.length == 31){
+    return true
+  }
+  else {
+    return false
+  }
  }
 
 
@@ -82,8 +87,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(arrayCopy, newFlavor){
+  arrayCopy.unshift(newFlavor)
+  return arrayCopy
  }
 
 
@@ -100,8 +106,10 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arrayCopy){
+ let lastItem = arrayCopy.length -1
+ arrayCopy.pop(lastItem)
+ return arrayCopy
 }
 
 
@@ -118,8 +126,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arrayCopy, indexWanted){
+  return arrayCopy[indexWanted]
 }
 
 
@@ -138,8 +146,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arrayCopy, flavor){
+  for (let i=0;i<arrayCopy.length;i++){
+    if (arrayCopy[i] === flavor){
+      arrayCopy.splice(i,1)
+    }
+  }
+  return arrayCopy
 }
 
 
@@ -163,8 +176,14 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arrayCopy, filterWord){
+  let chocolateArray = []
+  for (let i=0;i<arrayCopy.length;i++){
+    if (arrayCopy[i].includes(filterWord)){
+      chocolateArray.push(arrayCopy[i])
+    }
+  }
+  return chocolateArray
 }
 
 
@@ -181,8 +200,20 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(givenArray){
+  let wordCountArray = []
+  for (let i =0; i<givenArray;i++){
+    let wordCount = 0
+    let miniArray = givenArray[i].split(' ')
+    wordCount = wordminiArray.length
+    wordCountArray.push(wordCount)
+  }
+  let totalCount = 0
+  for (let i =0; i<wordCountArray;i++){
+    totalCount = totalCount + wordCountArray[i]
+  }
+  let averageWordCount = totalCount / wordCountArray.length
+  return averageWordCount
 }
 
 
